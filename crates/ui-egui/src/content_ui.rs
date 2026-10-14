@@ -585,19 +585,26 @@ pub(crate) fn editor(ctx: &egui::Context, view: &mut DocView, info: &DocInfo, ad
             };
             ui.horizontal_top(|ui| {
                 ui.spacing_mut().item_spacing.x = 4.0;
-                let mut edit = egui::TextEdit::multiline(&mut t.text)
-                    .font(font.clone())
-                    .desired_width(width)
-                    .desired_rows(1)
-                    .horizontal_align(halign)
-                    .background_color(if background_ready { Color32::TRANSPARENT } else { Color32::WHITE })
-                    .text_color(Color32::from_rgb(cr, cg, cb))
-                    .hint_text(tl!("Type text"))
-                    .id_salt("added-text-edit");
-                if letter_spacing != 0.0 {
-                    edit = edit.layouter(&mut spaced);
-                }
-                let resp = ui.add(edit);
+                let resp = {
+                    // Display order on screen, the logical text sent to the engine (#2101).
+                    let (mut buf, _) = crate::edit_text_ui::VisualText::new(t.text.clone());
+                    let mut edit = egui::TextEdit::multiline(&mut buf)
+                        .font(font.clone())
+                        .desired_width(width)
+                        .horizontal_align(halign)
+                        .desired_rows(1)
+                        .background_color(if background_ready { Color32::TRANSPARENT } else { Color32::WHITE })
+                        .text_color(Color32::from_rgb(cr, cg, cb))
+                        .hint_text(tl!("Type text"))
+                        .id_salt("added-text-edit");
+                    if letter_spacing != 0.0 {
+                        edit = edit.layouter(&mut spaced);
+                    }
+                    let output = edit.show(ui);
+                    t.text = buf.logical_text();
+                    crate::edit_text_ui::clipboard_in_logical_order(ui, &mut buf, output.cursor_range);
+                    output.response
+                };
                 if t.focus {
                     resp.request_focus();
                     t.focus = false;
