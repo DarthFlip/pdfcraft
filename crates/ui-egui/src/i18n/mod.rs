@@ -44,8 +44,8 @@ pub struct LangInfo {
     /// Plural form index for a count (English: 0 = one, 1 = other; Japanese: always 0). A catalog's
     /// `@plural` entries list one form per index.
     pub plural: fn(u64) -> usize,
-    /// The language is written right to left. egui lays text out left to right, so the catalog's
-    /// translations are put into display order when it loads ([`crate::bidi::display_rtl`]).
+    /// The language is written right to left. Translations stay in logical order;
+    /// the text engine resolves their display direction.
     pub rtl: bool,
     catalog: OnceLock<Catalog>,
 }
@@ -267,12 +267,9 @@ impl LangInfo {
 
     fn catalog(&self) -> &Catalog {
         self.catalog.get_or_init(|| {
-            let (mut catalog, errors) = Catalog::parse(self.source, self.plural_forms());
+            let (catalog, errors) = Catalog::parse(self.source, self.plural_forms());
             for error in errors {
                 log::warn!("{} interface catalog: {error}; that entry shows in English", self.code);
-            }
-            if self.rtl {
-                catalog.map_translations(crate::bidi::display_rtl);
             }
             catalog
         })
@@ -334,8 +331,7 @@ impl Lang {
         self.0.name
     }
 
-    /// Whether the language is written right to left. Its translations come back from the
-    /// lookups in display order (see [`LangInfo::rtl`]).
+    /// Whether the language is written right to left. Lookups always return logical text.
     pub fn rtl(self) -> bool {
         self.0.rtl
     }
@@ -1694,25 +1690,24 @@ mod tests {
         assert_eq!(restored.language, "ar");
     }
 
-    /// Lookups return Arabic in display order: egui draws the words left to right as given, and
-    /// joins the letters of each word itself.
+    /// Lookups keep logical order so labels, screen readers, wrapping and editing agree.
     #[test]
-    fn arabic_lookups_are_in_display_order() {
+    fn arabic_lookups_keep_logical_order_for_native_bidi_and_accessibility() {
         let ar = arabic();
         // "حفظ باسم…" as typed; the ellipsis ends the phrase on the left.
-        assert_eq!(tr(ar, "Save as…"), "…باسم حفظ");
+        assert_eq!(tr(ar, "Save as…"), "حفظ باسم…");
         // Latin names keep their own direction inside the phrase.
-        assert_eq!(tr(ar, "About PdfCraft"), "PdfCraft حول");
+        assert_eq!(tr(ar, "About PdfCraft"), "حول PdfCraft");
         // A caption's colon stays beside the widget on its right.
         assert_eq!(tr(ar, "Name:"), "الاسم:");
-        assert_eq!(tr(ar, "Issued by: "), "عن صادرة: ");
+        assert_eq!(tr(ar, "Issued by: "), "صادرة عن: ");
         // Placeholders survive and are filled in place.
-        assert_eq!(tr(ar, "Couldn't open {name}: {e}"), "{name}: {e} فتح تعذّر");
-        assert_eq!(fmt(tr(ar, "Couldn't open {name}: {e}"), &[("name", "a {e}.pdf"), ("e", "x")]), "a {e}.pdf: x فتح تعذّر");
-        assert_eq!(fmt(tr(ar, "Page {p} of {n}"), &[("p", "3"), ("n", "12")]), "12 من 3 الصفحة");
+        assert_eq!(tr(ar, "Couldn't open {name}: {e}"), "تعذّر فتح {name}: {e}");
+        assert_eq!(fmt(tr(ar, "Couldn't open {name}: {e}"), &[("name", "a {e}.pdf"), ("e", "x")]), "تعذّر فتح a {e}.pdf: x");
+        assert_eq!(fmt(tr(ar, "Page {p} of {n}"), &[("p", "3"), ("n", "12")]), "الصفحة 3 من 12");
         set_current(ar);
-        assert_eq!(command_label("Undo Insert pages from a.pdf"), "a.pdf من صفحات إدراج عن التراجع");
-        assert_eq!(menu_label("file.saveAs", "Save as…"), "…باسم حفظ");
+        assert_eq!(command_label("Undo Insert pages from a.pdf"), "التراجع عن إدراج صفحات من a.pdf");
+        assert_eq!(menu_label("file.saveAs", "Save as…"), "حفظ باسم…");
         set_current(Lang::EN);
     }
 
@@ -1744,7 +1739,7 @@ mod tests {
             assert_eq!(lang_from_tag(tag), Some(fa), "{tag}");
         }
         assert_eq!(first_supported("fa-IR\r\nen-US"), Some(fa));
-        // Lookups return Persian (single words in display order).
+        // Lookups return Persian in typing order.
         assert_eq!(tr(fa, "Save"), "ذخیره");
         assert_eq!(tr(fa, "Cancel"), "لغو");
         assert_eq!(tr(fa, "File"), "فایل");

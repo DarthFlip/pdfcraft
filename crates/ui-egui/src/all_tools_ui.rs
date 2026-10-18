@@ -13,9 +13,8 @@ const TILE: egui::Vec2 = vec2(148.0, 118.0);
 const MATCHES_SHOWN: usize = 2;
 
 /// Whether `query` (already trimmed and lower-cased) is in `label` or its translation.
-/// A right-to-left language's translations are in display order (their words run the other way)
-/// while the query is in typing order, so there several words match one by one, as in the
-/// command palette.
+/// Translations are in typing order, as the query is; in a right-to-left language several words
+/// also match one by one, in any order, as in the command palette.
 fn label_hit(label: &str, translated: &str, query: &str, rtl: bool) -> bool {
     let translated = translated.to_lowercase();
     label.to_lowercase().contains(query)
@@ -186,11 +185,12 @@ mod tests {
 
     #[test]
     fn right_to_left_labels_match_a_query_typed_in_logical_order() {
-        let shown = crate::bidi::display_rtl("تنظيم الصفحات");
-        assert_ne!(shown, "تنظيم الصفحات", "the catalogue reverses the words for display");
-        assert!(label_hit("Organize pages", &shown, "تنظيم الصفحات", true));
-        assert!(label_hit("Organize pages", &shown, "الصفحات", true), "one word");
-        assert!(!label_hit("Organize pages", &shown, "تنظيم الملفات", true), "every word must be there");
-        assert!(!label_hit("Organize pages", &shown, "تنظيم الصفحات", false), "left-to-right labels stay exact");
+        // The catalogue keeps typing order; egui lays the words out right to left when drawing.
+        let shown = "تنظيم الصفحات";
+        assert!(label_hit("Organize pages", shown, "تنظيم الصفحات", true));
+        assert!(label_hit("Organize pages", shown, "الصفحات", true), "one word");
+        assert!(label_hit("Organize pages", shown, "الصفحات تنظيم", true), "words in any order");
+        assert!(!label_hit("Organize pages", shown, "تنظيم الملفات", true), "every word must be there");
+        assert!(!label_hit("Organize pages", shown, "الصفحات تنظيم", false), "left-to-right labels stay exact");
     }
 }

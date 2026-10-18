@@ -14,10 +14,10 @@
 # (Acrobat's included) was consulted or copied; add entries the same way.
 # Product and technology names (PdfCraft, PDF, Acrobat JavaScript ...) stay in Latin letters.
 #
-# Right to left: like Arabic and Kurdish, `rtl: true` in i18n/mod.rs puts every entry into display
-# order when the catalog loads ([`crate::bidi::display_rtl`]); entries are written here in logical
-# (typing) order. The Persian comma \u060c and question mark \u061f are used, and \u200c (ZWNJ) joins
-# compound words.
+# Right to left: like Arabic and Kurdish, write every entry in logical (typing) order. The
+# interface's text layout (the bidi patch in vendor/epaint) resolves each line's direction and draws
+# it right to left, so entries are used as typed. The Persian comma \u060c and question mark \u061f
+# are used, and \u200c (ZWNJ) joins compound words.
 
 	Menu	منو
 	File	فایل
