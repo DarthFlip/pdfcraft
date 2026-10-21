@@ -1025,6 +1025,8 @@ fn dialogs(app: &mut PdfCraftApp, ctx: &egui::Context) {
                 }
                 if apply {
                     let d = std::mem::take(&mut app.signature_draft);
+                    // Cleared first, so a notice raised below (a full signature list) stays shown.
+                    app.toast = None;
                     let tool = if d.initials {
                         app.initials = d.saved();
                         crate::fill_sign::FillTool::Initials
@@ -1042,7 +1044,6 @@ fn dialogs(app: &mut PdfCraftApp, ctx: &egui::Context) {
                         crate::fill_sign::FillTool::Signature
                     };
                     app.quick_tool = crate::QuickTool::Fill(tool);
-                    app.toast = None;
                 }
                 close = apply || cancel;
                 return;
