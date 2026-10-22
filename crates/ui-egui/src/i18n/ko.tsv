@@ -2768,3 +2768,9 @@ theme	Appearance	모양
 	Attaching files is not available on the web yet	웹에서는 아직 파일을 첨부할 수 없습니다
 	Delete attachment	첨부 파일 삭제
 	Delete attachment {key}	첨부 파일 {key} 삭제
+
+# Saved signature list (AI-assisted, not separately native-reviewed)
+	Fill & Sign: add another saved signature	채우기 및 서명: 저장된 서명 추가
+	Signature {n}	서명 {n}
+	Work, Personal, a name…	업무, 개인, 이름…
+	You can keep up to {n} signatures. Remove one to add another.	서명은 최대 {n}개까지 저장할 수 있습니다. 다른 서명을 추가하려면 하나를 제거하세요.

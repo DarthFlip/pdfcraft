@@ -2694,3 +2694,9 @@ theme	Appearance	ลักษณะที่ปรากฏ
 
 # AI-assisted additions for restoring the last view (#1767) (2026-10-22); not reviewed by a native speaker.
 	Restore the last view (page, zoom and page display) when a document is opened again	คืนค่ามุมมองล่าสุด (หน้า การซูม และการแสดงหน้า) เมื่อเปิดเอกสารอีกครั้ง
+
+# Saved signature list (AI-assisted, not separately native-reviewed)
+	Fill & Sign: add another saved signature	กรอกและเซ็น: เพิ่มลายเซ็นที่บันทึกไว้อีกรายการ
+	Signature {n}	ลายเซ็น {n}
+	Work, Personal, a name…	งาน, ส่วนตัว, ชื่อ…
+	You can keep up to {n} signatures. Remove one to add another.	เก็บลายเซ็นได้ไม่เกิน {n} รายการ โปรดเอาออกหนึ่งรายการเพื่อเพิ่มรายการใหม่

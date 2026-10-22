@@ -2723,3 +2723,9 @@ certificate	Version	وەشان
 
 # Date picker: Today button (#4274) (AI-assisted, not separately native-reviewed)
 	Today	ئەمڕۆ
+
+# Saved signature list (AI-assisted, not separately native-reviewed)
+	Fill & Sign: add another saved signature	پڕکردنەوە و واژووکردن: زیادکردنی واژوویەکی پاشەکەوتکراوی تر
+	Signature {n}	واژوو {n}
+	Work, Personal, a name…	کار، کەسی، ناوێک…
+	You can keep up to {n} signatures. Remove one to add another.	دەتوانیت تا {n} واژوو هەڵبگریت. یەکێکیان لابە بۆ زیادکردنی یەکێکی تر.

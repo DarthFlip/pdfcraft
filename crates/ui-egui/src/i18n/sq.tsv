@@ -2518,3 +2518,9 @@ animation effects	Off	Joaktiv
 	Attaching files is not available on the web yet	Bashkëngjitja e skedarëve nuk është ende e disponueshme në ueb
 	Delete attachment	Fshi bashkëngjitjen
 	Delete attachment {key}	Fshi bashkëngjitjen {key}
+
+# Saved signature list (AI-assisted, not separately native-reviewed)
+	Fill & Sign: add another saved signature	Plotëso dhe nënshkruaj: shto një nënshkrim tjetër të ruajtur
+	Signature {n}	Nënshkrimi {n}
+	Work, Personal, a name…	Puna, Personale, një emër…
+	You can keep up to {n} signatures. Remove one to add another.	Mund të ruani deri në {n} nënshkrime. Hiqni njërin për të shtuar një tjetër.

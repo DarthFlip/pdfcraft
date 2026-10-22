@@ -2792,3 +2792,9 @@ theme	Appearance	Aspect
 	Attaching files is not available on the web yet	Atașarea fișierelor nu este încă disponibilă pe web
 	Delete attachment	Ștergere atașament
 	Delete attachment {key}	Ștergere atașament {key}
+
+# Saved signature list (AI-assisted, not separately native-reviewed)
+	Fill & Sign: add another saved signature	Completare și semnare: adăugare altă semnătură salvată
+	Signature {n}	Semnătură {n}
+	Work, Personal, a name…	Serviciu, Personal, un nume…
+	You can keep up to {n} signatures. Remove one to add another.	Puteți păstra cel mult {n} semnături. Eliminați una pentru a adăuga alta.

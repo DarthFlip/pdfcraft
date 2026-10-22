@@ -2801,3 +2801,9 @@ theme	Appearance	Teema
 	Attaching files is not available on the web yet	Tiedostojen liittäminen ei ole vielä käytettävissä verkossa
 	Delete attachment	Poista liite
 	Delete attachment {key}	Poista liite {key}
+
+# Saved signature list (AI-assisted, not separately native-reviewed)
+	Fill & Sign: add another saved signature	Täytä ja allekirjoita: lisää uusi tallennettu allekirjoitus
+	Signature {n}	Allekirjoitus {n}
+	Work, Personal, a name…	Työ, Henkilökohtainen, nimi…
+	You can keep up to {n} signatures. Remove one to add another.	Voit tallentaa enintään {n} allekirjoitusta. Poista yksi lisätäksesi uuden.

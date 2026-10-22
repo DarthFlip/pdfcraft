@@ -2792,3 +2792,9 @@ theme	Appearance	Aspecte
 	Attaching files is not available on the web yet	Encara no es poden adjuntar fitxers al web
 	Delete attachment	Elimina l'adjunt
 	Delete attachment {key}	Elimina l'adjunt {key}
+
+# Saved signature list (AI-assisted, not separately native-reviewed)
+	Fill & Sign: add another saved signature	Emplena i signa: afegeix una altra signatura desada
+	Signature {n}	Signatura {n}
+	Work, Personal, a name…	Feina, Personal, un nom…
+	You can keep up to {n} signatures. Remove one to add another.	Es poden desar fins a {n} signatures. Elimina'n una per afegir-ne una altra.

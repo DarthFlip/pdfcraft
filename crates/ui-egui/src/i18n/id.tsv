@@ -2769,3 +2769,9 @@ theme	Appearance	Tampilan
 	Attaching files is not available on the web yet	Melampirkan file belum tersedia di web
 	Delete attachment	Hapus lampiran
 	Delete attachment {key}	Hapus lampiran {key}
+
+# Saved signature list (AI-assisted, not separately native-reviewed)
+	Fill & Sign: add another saved signature	Isi & Tanda Tangani: tambahkan tanda tangan tersimpan lainnya
+	Signature {n}	Tanda tangan {n}
+	Work, Personal, a name…	Kantor, Pribadi, sebuah nama…
+	You can keep up to {n} signatures. Remove one to add another.	Anda dapat menyimpan hingga {n} tanda tangan. Hapus satu untuk menambahkan yang lain.
