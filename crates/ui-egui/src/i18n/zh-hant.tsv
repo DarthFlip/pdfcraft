@@ -2511,3 +2511,8 @@ animation effects	Off	關
 	Rotate the selected pages clockwise	順時針旋轉所選頁面
 	Extract the selected pages…	擷取所選頁面…
 	Delete the selected pages	刪除所選頁面
+
+# Saved initials list (AI-assisted, not separately native-reviewed)
+	Fill & Sign: add other saved initials	填寫與簽署：再新增一組已儲存的姓名縮寫
+	Initials {n}	姓名縮寫 {n}
+	You can keep up to {n} sets of initials. Remove one to add another.	最多可儲存 {n} 組姓名縮寫。請先刪除一組，再新增新的。

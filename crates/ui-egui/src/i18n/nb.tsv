@@ -2738,3 +2738,8 @@ key	Space	Mellomrom
 	Rotate the selected pages clockwise	Roter de valgte sidene med klokken
 	Extract the selected pages…	Trekk ut de valgte sidene…
 	Delete the selected pages	Slett de valgte sidene
+
+# Saved initials list (AI-assisted, not separately native-reviewed)
+	Fill & Sign: add other saved initials	Fyll ut og signer: legg til flere lagrede initialer
+	Initials {n}	Initialer {n}
+	You can keep up to {n} sets of initials. Remove one to add another.	Du kan beholde opptil {n} sett med initialer. Fjern ett for å legge til et nytt.

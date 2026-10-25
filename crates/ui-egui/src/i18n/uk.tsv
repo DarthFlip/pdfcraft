@@ -2583,3 +2583,8 @@ animation effects	Off	Вимкнено
 	Rotate the selected pages clockwise	Повернути вибрані сторінки за годинниковою стрілкою
 	Extract the selected pages…	Витягнути вибрані сторінки…
 	Delete the selected pages	Видалити вибрані сторінки
+
+# Saved initials list (AI-assisted, not separately native-reviewed)
+	Fill & Sign: add other saved initials	Заповнення й підпис: додати ще одні збережені ініціали
+	Initials {n}	Ініціали {n}
+	You can keep up to {n} sets of initials. Remove one to add another.	Можна зберігати не більше {n} наборів ініціалів. Видаліть один, щоб додати інший.

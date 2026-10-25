@@ -2822,3 +2822,8 @@ theme	Appearance	Išvaizda
 	Rotate the selected pages clockwise	Pasukti pasirinktus puslapius pagal laikrodžio rodyklę
 	Extract the selected pages…	Išskleisti pasirinktus puslapius…
 	Delete the selected pages	Ištrinti pasirinktus puslapius
+
+# Saved initials list (AI-assisted, not separately native-reviewed)
+	Fill & Sign: add other saved initials	Pildyti ir pasirašyti: pridėti dar vienus įrašytus inicialus
+	Initials {n}	Inicialai {n}
+	You can keep up to {n} sets of initials. Remove one to add another.	Galite laikyti iki {n} inicialų rinkinių. Norėdami pridėti kitą, vieną pašalinkite.

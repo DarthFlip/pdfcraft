@@ -2560,3 +2560,8 @@ animation effects	Off	Ki
 	Rotate the selected pages clockwise	A kijelölt oldalak forgatása az óramutató járásával megegyezően
 	Extract the selected pages…	A kijelölt oldalak kibontása…
 	Delete the selected pages	A kijelölt oldalak törlése
+
+# Saved initials list (AI-assisted, not separately native-reviewed)
+	Fill & Sign: add other saved initials	Kitöltés és aláírás: újabb mentett monogram hozzáadása
+	Initials {n}	Monogram {n}
+	You can keep up to {n} sets of initials. Remove one to add another.	Legfeljebb {n} monogramot tárolhatsz. Újabb hozzáadásához távolíts el egyet.

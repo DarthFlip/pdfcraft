@@ -2561,3 +2561,8 @@ animation effects	Off	オフ
 	Rotate the selected pages clockwise	選択したページを時計回りに回転
 	Extract the selected pages…	選択したページを抽出…
 	Delete the selected pages	選択したページを削除
+
+# Saved initials list (AI-assisted, not separately native-reviewed)
+	Fill & Sign: add other saved initials	入力と署名：保存済みのイニシャルを追加
+	Initials {n}	イニシャル {n}
+	You can keep up to {n} sets of initials. Remove one to add another.	保存できるイニシャルは {n} 個までです。追加するには、いずれかを削除してください。

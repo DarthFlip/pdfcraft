@@ -2868,3 +2868,8 @@ certificate	Version	Verze
 	Rotate the selected pages clockwise	Otočit vybrané stránky po směru hodinových ručiček
 	Extract the selected pages…	Extrahovat vybrané stránky…
 	Delete the selected pages	Odstranit vybrané stránky
+
+# Saved initials list (AI-assisted, not separately native-reviewed)
+	Fill & Sign: add other saved initials	Vyplnit a podepsat: přidat další uložené iniciály
+	Initials {n}	Iniciály {n}
+	You can keep up to {n} sets of initials. Remove one to add another.	Uložit lze nejvýše {n} sad iniciál. Chcete-li přidat další, některou odeberte.

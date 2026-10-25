@@ -2846,3 +2846,8 @@ theme	Appearance	Aparência
 	Rotate the selected pages clockwise	Girar as páginas selecionadas no sentido horário
 	Extract the selected pages…	Extrair as páginas selecionadas…
 	Delete the selected pages	Excluir as páginas selecionadas
+
+# Saved initials list (AI-assisted, not separately native-reviewed)
+	Fill & Sign: add other saved initials	Preencher e assinar: adicionar outra rubrica salva
+	Initials {n}	Rubrica {n}
+	You can keep up to {n} sets of initials. Remove one to add another.	Você pode manter até {n} rubricas. Remova uma para adicionar outra.

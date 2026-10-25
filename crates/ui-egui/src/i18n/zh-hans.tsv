@@ -2525,3 +2525,8 @@ animation effects	Off	关
 	Rotate the selected pages clockwise	顺时针旋转所选页面
 	Extract the selected pages…	提取所选页面…
 	Delete the selected pages	删除所选页面
+
+# Saved initials list (AI-assisted, not separately native-reviewed)
+	Fill & Sign: add other saved initials	填写与签名：再添加一组已保存的姓名首字母
+	Initials {n}	姓名首字母 {n}
+	You can keep up to {n} sets of initials. Remove one to add another.	最多可保存 {n} 组姓名首字母。请先移除一组，再添加新的。

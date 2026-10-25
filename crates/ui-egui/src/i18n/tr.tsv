@@ -2557,3 +2557,8 @@ animation effects	Off	Kapalı
 	Rotate the selected pages clockwise	Seçili sayfaları saat yönünde döndür
 	Extract the selected pages…	Seçili sayfaları ayıkla…
 	Delete the selected pages	Seçili sayfaları sil
+
+# Saved initials list (AI-assisted, not separately native-reviewed)
+	Fill & Sign: add other saved initials	Doldur ve İmzala: başka bir kayıtlı paraf ekle
+	Initials {n}	Paraf {n}
+	You can keep up to {n} sets of initials. Remove one to add another.	En fazla {n} paraf saklayabilirsiniz. Başka bir paraf eklemek için birini kaldırın.
